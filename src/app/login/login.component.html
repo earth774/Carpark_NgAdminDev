@@ -1,0 +1,63 @@
+<div class="contianer-fluid">
+  <img src="assets/img/bg.jpg" alt="" class="bg">
+  <div class="bg-overlay"></div>
+  <div class="col-lg-3 col-md-2 col-sm-2 col-xs-1">&nbsp;</div>
+  <div class="col-lg-6 col-md-8 col-sm-8 col-xs-10">
+    <h2>
+      UP Builder
+      <small class="text-muted">เข้าสู่ระบบเพื่อจัดการ</small>
+    </h2>
+    <div class="row">
+      <div class="col-md-2">&nbsp;</div>
+      <div class="col-md-8">
+        <div class="panel">
+          <div class="panel-body" *ngIf="loading">{{ loadMsg }}</div>
+          <div class="panel-body" *ngIf="!loading">
+            <div class="col-md-10 col-md-offset-1">
+              <form (submit)="toLogin($event)">
+                <div class="form-group label-floating">
+                    <label class="control-label">อีเมลล์</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group label-floating">
+                    <label class="control-label">รหัสผ่าน</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--<div class="card">
+          <div class="card-header" data-background-color="purple">
+            <h4 class="title">
+              <h4 class="text-center">
+                CPMS
+                <small class="text-muted">เข้าสู่ระบบเพื่อจัดการ</small>
+              </h4>
+            </h4>
+          </div>
+          <div class="card-content">
+            <div class="col-md-10 col-md-offset-1">
+              <form (submit)="toLogin($event)">
+                <div class="form-group label-floating">
+                  <label class="control-label">อีเมลล์</label>
+                  <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group label-floating">
+                  <label class="control-label">รหัสผ่าน</label>
+                  <input type="password" class="form-control" id="password" required>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>-->
+      </div>
+      <div class="col-md-2">&nbsp;</div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-2 col-sm-2 col-xs-1">&nbsp;</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="logo">
+    <a class="simple-text">
+        <div class="logo-img">
+            <img src="/assets/img/angular2-logo-red.png"/>
+        </div>
+        CPMS
+    </a>
+</div>
+<div class="sidebar-wrapper">
+
+    <ul class="nav nav-mobile-menu" *ngIf="isMobileMenu()">
+        <li>
+            <a href="javascript:void(0)" (click)="onLoggedout()" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="material-icons">power_settings_new</i>
+                <p class="hidden-lg hidden-md">ออกจากระบบ</p>
+            </a>
+        </li>
+    </ul>
+
+    <div class="nav-container">
+        <ul class="nav">
+            <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
+                <a id="{{menuItem.id}}" [routerLink]="[menuItem.path]">
+                    <i class="material-icons">{{menuItem.icon}}</i>
+                    <p>{{menuItem.title}}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

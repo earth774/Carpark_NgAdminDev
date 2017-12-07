@@ -1,0 +1,161 @@
+<div class="main-content">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="card card-stats" >
+                        <div class="card-header" data-background-color="orange">
+                            <i class="material-icons">content_copy</i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="category" style="color:green">อุปกรณ์พร้อมใช้งาน</h4>
+                            <h3 class="title" style="color:green">30</h3>
+                            <p>
+                              <small style="color:purple">ทั้งหมด 32</small>
+                              &nbsp;
+                              <small style="color:red">มีปัญหา 2</small>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                          <div class="stats">
+                            <i class="material-icons">date_range</i> เมื่อ 4 ชั่วโมงก่อน
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="card card-stats" >
+                        <div class="card-header" data-background-color="green">
+                            <i class="material-icons">check_circle</i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="category"  style="color:green">ว่าง</h4>
+                            <h3 class="title" style="color:green">28</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">date_range</i> เมื่อ 4 ชั่วโมงก่อน
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="card card-stats" >
+                        <div class="card-header" data-background-color="red">
+                            <i class="material-icons">info_outline</i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="category"  style="color:red">ไม่ว่าง</h4>
+                            <h3 class="title" style="color:red">2</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">date_range</i> เมื่อ 4 ชั่วโมงก่อน
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card" >
+                        <div class="card-header card-chart" data-background-color="green">
+                            <div class="ct-chart" id="dailySalesChart"></div>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="title">กราฟข้อมูลเข้าใช้งาน</h4>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">access_time</i> เมื่อ 4 นาทีก่อน
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              <div class="col-lg-6 col-md-12">
+                <div class="card card-nav-tabs" >
+                  <div class="card-header" data-background-color="purple">
+                    <div class="nav-tabs-navigation">
+                      <div class="nav-tabs-wrapper">
+                        <span class="nav-tabs-title">สถานะ:</span>
+                        <ul class="nav nav-tabs" data-tabs="tabs">
+                          <li class="active">
+                            <a href="#profile" data-toggle="tab">
+                              <i class="material-icons">location_on</i>
+                              สถานที่
+                              <div class="ripple-container"></div></a>
+                          </li>
+                          <li class="">
+                            <a href="#messages" data-toggle="tab">
+                              <i class="material-icons">sim_card</i>
+                              อาร์เอฟไอดี
+                              <div class="ripple-container"></div></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-content">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="profile">
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes" checked>
+                                </label>
+                              </div>
+                            </td>
+                            <td>LO_1100</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-success btn-simple btn-xs">
+                                <i class="material-icons">check_circle</i> ว่าง 5
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">info_outline</i> ไม่ว่าง 7
+                              </button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="messages">
+                        <table class="table">
+                          <tbody>
+                          <tr *ngFor="let r of rfid | async">
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes" checked>
+                                </label>
+                              </div>
+                            </td>
+                            <td>{{ r.rfid_data }}</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+
+</div>

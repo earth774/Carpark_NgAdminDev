@@ -1,0 +1,51 @@
+.container-fluid {
+  background: transparent;
+}
+
+.bg {
+  width:100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin:0;
+  padding: 0;
+  z-index: -999;
+}
+
+.bg-overlay {
+  background:rgba(0,0,0,0.5);
+  width:100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin:0;
+  padding: 0;
+  z-index: -998;
+}
+
+h2 {
+  margin-top: 20%;
+  color: white;
+  text-shadow: 2px 3px 4px 5px;
+  text-align: center;
+}
+
+.panel, .card {
+  background: rgba(0,0,0,0.3);
+  margin-top: 10%;
+  color: white;
+}
+
+
+.loading{
+  animation: loading-spin infinite 20s linear;
+  height: 80px;
+}
+
+@keyframes loading-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
